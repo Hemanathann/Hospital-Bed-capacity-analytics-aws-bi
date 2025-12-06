@@ -86,8 +86,15 @@ $env:DATA_PATH="C:\path\to\service_capacity_staff.csv"; streamlit run app.py
 
 What you will see:
 - Page 1 – Capacity vs Demand Overview (KPIs, weekly trends, service slicer)
-- Page 2 – Service & Staff Experience (refusal rates, morale vs satisfaction bubble chart)
+Power BI — Capacity vs Demand overview (summary)
 
+![Power BI - Capacity vs Demand overview (All services)](Screenshots/Power%20BI%20-%20Capacity%20vs%20Demand%20overview%20(All%20services).png)
+
+
+- Page 2 – Service & Staff Experience (refusal rates, morale vs satisfaction bubble chart)
+Power BI — Service & Staff Experience
+
+![Power BI - Service & Staff Experience page](Screenshots/Power%20BI%20-%20Service%20%26%20Staff%20Experience%20page.png)
 Note: The PBIX includes the visuals only — if it expects a direct dataset connection, the file in the repo is the same exported dataset used in the report. 
 
 ---
@@ -150,6 +157,9 @@ If deploying to EC2:
 - [ ] Power BI Desktop opens the PBIX file and shows visuals
 
 ---
-Live demo (your Streamlit app)
+Streamlit app — Capacity vs Demand (live UI)
+
+
 - Simple link:
   [Open the live Streamlit app (HTTP)](http://108.130.199.242:8501/)
+![Streamlit app - Capacity vs Demand tab](Screenshots/Streamlit%20app%20-%20Capacity%20vs%20Demand%20tab.png)Live demo (your Streamlit app)
