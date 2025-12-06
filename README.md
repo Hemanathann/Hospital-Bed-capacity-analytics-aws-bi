@@ -5,7 +5,7 @@
 **Student:** Hemanathan Sasikala Karthikeyan  
 **Student ID:** 25201772
 
-This repository contains the full end-to-end implementation of a cloud-based healthcare analytics system, built using AWS (S3, Glue, Athena), Power BI, Python, and Streamlit, along with the final project report, datasets, screenshots, and dashboards.
+This repository contains the full end-to-end implementation of a cloud-based healthcare analytics system, built using AWS (S3, Glue, Athena), Power BI, Python, and Streamlit, along with the final project deliverables (Power BI report, Streamlit app, datasets, notebooks, and project report).
 
 The aim of the project is to analyse hospital capacity, patient demand, and staff experience across four services — Emergency, ICU, General Medicine, and Surgery — over 52 weeks.
 
@@ -34,8 +34,6 @@ Hospital-Bed-capacity-analytics-aws-bi/
 └─ README.md                            # You are here
 ```
 
-````
-
 ## 🚀 2. How to Run the Streamlit Dashboard (Python)
 
 This is the easiest way to explore the analytics.
@@ -50,7 +48,7 @@ This is the easiest way to explore the analytics.
 
 **STEP 1 — Open Terminal**
 
-- Windows: PowerShell
+- Windows: PowerShell  
 - Mac/Linux: Terminal
 
 **STEP 2 — Navigate to the project folder**
@@ -97,6 +95,14 @@ Streamlit will show:
 
 Open that link in your browser.
 
+To run the app for external access (e.g., on an EC2 instance):
+
+```bash
+streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+```
+
+Public URL used during development (example): `http://108.130.199.242:8501/`
+
 ## 📈 3. How to Open the Power BI Dashboard
 
 ### Prerequisite
@@ -105,8 +111,8 @@ Open that link in your browser.
 
 ### Steps
 
-1.  Open Power BI Desktop.
-2.  Load: `PowerBI Dashboard/HospitalCapacityDashboard.pbix`
+1. Open Power BI Desktop.  
+2. Load: `PowerBI Dashboard/HospitalCapacityDashboard.pbix`
 
 ### What You Will See
 
@@ -121,7 +127,7 @@ Open that link in your browser.
 
 ## 🧪 4. Jupyter Notebook (Data Preparation)
 
-If you want to inspect the data pipeline:
+If you want to inspect the data pipeline:  
 `HospitalBeds/notebooks/hospital_beds_eda.ipynb`
 
 Open it using Jupyter Notebook.
@@ -139,59 +145,49 @@ This parallels what would run in AWS Glue/Spark during production.
 
 Although not required to execute the submitted version, the full cloud workflow used was:
 
-`Jupyter EDA → S3 → Glue (Spark) → Athena → Power BI + Streamlit → EC2 Deployment`
+Jupyter EDA → S3 → Glue (Spark) → Athena → Power BI + Streamlit → EC2 Deployment
 
-Steps included:
+High-level steps:
 
-1.  Upload raw data to AWS S3
-2.  Transform using AWS Glue
-3.  Query using AWS Athena
-4.  Export processed data to Power BI + Streamlit
-5.  Deploy Streamlit app on EC2:
-
-<!-- end list -->
-
-```bash
-streamlit run app.py --server.port 8501 --server.address 0.0.0.0
-```
-
-_Public URL used:_ `http://108.130.199.242:8501/`
+1. Upload raw data to AWS S3  
+2. Transform using AWS Glue  
+3. Query using AWS Athena  
+4. Export processed data to Power BI + Streamlit  
+5. Deploy Streamlit app on EC2
 
 ## 🧩 6. Features of This Software
 
-- Interactive bed-capacity analytics
-- Service-level filtering (Emergency, ICU, GM, Surgery)
-- Weekly demand vs beds visualization
-- KPIs summarizing shortages, refusal rates & utilisation
-- Experience analytics: satisfaction vs morale
-- Bubble charts sized by bed shortages
-- Two full dashboards: Power BI + Streamlit
+- Interactive bed-capacity analytics  
+- Service-level filtering (Emergency, ICU, GM, Surgery)  
+- Weekly demand vs beds visualization  
+- KPIs summarizing shortages, refusal rates & utilisation  
+- Experience analytics: satisfaction vs morale  
+- Bubble charts sized by bed shortages  
+- Two full dashboards: Power BI + Streamlit  
 - Cloud-ready architecture using AWS
 
-## 📘 7. File Directory
+## 📘 7. File Directory (Included in the ZIP/Repo)
 
-This repository/ZIP includes everything required:
-
-- ✔ Project Report (PDF)
-- ✔ Source Code
-- ✔ All datasets
-- ✔ Dashboards
-- ✔ README (this file)
+- ✔ Project Report (PDF)  
+- ✔ Source Code  
+- ✔ All datasets  
+- ✔ Dashboards  
+- ✔ README (this file)  
 - ✔ Screenshots
 
-No external dependencies or AWS access is required to run this version.
+No external dependencies or AWS access is required to run the submitted version.
 
 ## 🧾 8. How to Reproduce the Full Project (Summary)
 
-1.  Run EDA notebook (optional)
-2.  Open Power BI dashboard
-3.  Run Streamlit web app
+1. Run EDA notebook (optional)  
+2. Open Power BI dashboard  
+3. Run Streamlit web app
 
 These three components demonstrate:
 
-- Data warehouse design
-- Data transformation pipeline
-- Analytics and dashboarding
+- Data warehouse design  
+- Data transformation pipeline  
+- Analytics and dashboarding  
 - Cloud deployment experience
 
 ---
@@ -205,9 +201,3 @@ rm -r .venv
 python -m venv .venv
 pip install -r requirements.txt
 ```
-
-
-```
-
-```
-````
