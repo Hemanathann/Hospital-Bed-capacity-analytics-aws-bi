@@ -1,197 +1,133 @@
-# Hospital Bed Capacity & Patient Flow Analytics
+Hospital Bed Capacity & Patient Flow Analytics (AWS + Power BI + Streamlit)
 
-**Module:** COMP47780 – Cloud Computing (2025/26, Autumn)  
-**Project Option:** Project 1 – Healthcare Data Warehouse Management  
-**Student:** Hemanathan Sasikala Karthikeyan (ID: 25201772)
+Module: COMP47780 – Cloud Computing (2025/26, Autumn)
+Project: Healthcare Big Data – Project 1 (Cloud-based Healthcare Data Warehouse)
+Student: Hemanathan Sasikala Karthikeyan
+Student ID: 25201772
 
-This repository/ZIP contains:
+This repository contains the full end-to-end implementation of a cloud-based healthcare analytics system, built using AWS (S3, Glue, Athena), Power BI, Python, and Streamlit, along with the final project report, datasets, screenshots, and dashboards.
 
-- The **project report**
-- All **source code**
-- All **data files**
-- Dashboards (Power BI and Streamlit)
+The aim of the project is to analyse hospital capacity, patient demand, and staff experience across four services — Emergency, ICU, General Medicine, and Surgery — over 52 weeks.
 
-Everything needed to run the implementation locally is included.
-
----
-
-## 1. Folder Structure (what is inside the ZIP)
-
-When you unzip the project, you should see a structure like:
-
-```text
-Cloud Project/
+📁 1. Repository Structure
+Hospital-Bed-capacity-analytics-aws-bi/
+│
 ├─ HospitalBeds/
-│  ├─ raw_data/                       # Original synthetic hospital data
-│  │  ├─ patients.csv
-│  │  ├─ services_weekly.csv
-│  │  ├─ staff.csv
-│  │  └─ staff_schedule.csv
-│  ├─ exports/                        # Dimension & fact tables + final dataset
-│  │  └─ service_capacity_staff.csv   # Final analytics dataset (service x week)
-│  ├─ notebooks/
-│     └─ hospital_beds_eda.ipynb      # Jupyter EDA & feature engineering
+│  ├─ raw_data/                        # Original synthetic data
+│  ├─ exports/                         # Processed fact/dim tables + final dataset
+│  ├─ notebooks/                       # Jupyter EDA & feature engineering
 │
 ├─ PowerBI Dashboard/
-│  └─ HospitalCapacityDashboard.pbix   # Power BI report (2 pages)
+│  └─ HospitalCapacityDashboard.pbix   # 2-page Power BI analytics report
 │
 ├─ streamlit_app/
-│  ├─ app.py                           # Streamlit web dashboard
+│  ├─ app.py                           # Streamlit dashboard
 │  ├─ requirements.txt                 # Python dependencies
-│  └─ service_capacity_staff.csv       # Same analytics dataset for the app
+│  └─ service_capacity_staff.csv       # Final analytics dataset
 │
-├─ Screenshots/                        # Screenshots used in the report
-├─ Report_COMP47780_Cloud_Project_...pdf (or .docx)  # Final project report
-└─ README.md                           # This file
-You only need Python (for the Streamlit app) and Power BI Desktop (for the PBIX file) to run and check the project locally.
-No AWS setup is required to execute the submitted version.
-2. How to Run the Streamlit Dashboard (Python app)
+├─ Screenshots/                        # Screens used in project report
+│
+├─ Report_COMP47780_Cloud_Project.pdf  # Final report submitted
+│
+└─ README.md                           # You are here
 
-This is the easiest way to see the analytics running in a browser.
+🚀 2. How to Run the Streamlit Dashboard (Python)
 
-2.1. Prerequisites
+This is the easiest way to explore the analytics.
 
-Python 3.10+ installed
+Prerequisites
+
+Python 3.10+
 
 pip installed
 
-An internet browser (Chrome, Edge, etc.)
+Any web browser
 
-2.2. Steps
+Step-by-Step Instructions
+STEP 1 — Open Terminal
 
-Open a terminal
+Windows: PowerShell
+Mac/Linux: Terminal
 
-On Windows: open PowerShell or Command Prompt
+STEP 2 — Navigate to the project folder
+cd "PATH/TO/streamlit_app"
 
-On macOS/Linux: open Terminal
-
-Navigate to the streamlit_app folder inside the unzipped project
-
-Example (adjust the path to where you unzipped):
-cd "PATH/TO/Cloud Project/streamlit_app"
-
-Create and activate a virtual environment (recommended)
-
-# Create virtual environment
+STEP 3 — Create virtual environment
 python -m venv .venv
 
-# Activate it
-# On Windows:
+
+Activate it:
+
+Windows:
+
 .venv\Scripts\activate
 
-# On macOS / Linux:
+
+Mac/Linux:
+
 source .venv/bin/activate
 
-Install required Python packages
-# Create virtual environment
-python -m venv .venv
-
-# Activate it
-# On Windows:
-.venv\Scripts\activate
-
-# On macOS / Linux:
-source .venv/bin/activate
-
-Install required Python packages
-
+STEP 4 — Install dependencies
 pip install -r requirements.txt
-This installs Streamlit, Pandas, Altair, etc.
 
-Run the Streamlit app
-
+STEP 5 — Run the Streamlit app
 streamlit run app.py
 
-Open the dashboard in your browser
 
-After a few seconds, Streamlit will show something like:
+Streamlit will show:
 
-You can now view your Streamlit app in your browser.
-
-Open http://localhost:8501 in your browser.
-
-2.3. What you should see
-
-The app has two tabs:
-
-Capacity vs Demand Overview
-
-KPIs: total bed shortage, spare bed capacity, average bed utilisation, average staff morale, average refusal rate
-
-Line + layered charts of patient requests, patients admitted and available beds by week
-
-Sidebar filters:
-
-Service selection (Emergency, ICU, General Medicine, Surgery)
-
-Week range slider
-
-Service & Staff Experience
-
-Bar chart: average refusal rate by service
-
-Bubble chart: staff morale vs patient satisfaction (bubble size = bed shortage)
-
-Table: utilisation %, refusal %, satisfaction, morale, bed shortage, spare capacity
-
-Text block with key insights (e.g., Emergency as the most pressured service)
-
-All metrics are based on the service_capacity_staff.csv dataset produced by the data pipeline.
-
-3. How to Open the Power BI Dashboard
-
-The Power BI dashboard gives another view of the same analytics.
-
-3.1. Prerequisite
-
-Power BI Desktop installed
-
-3.2. Steps
-
-Open Power BI Desktop.
-
-Go to:
-
-Cloud Project/PowerBI Dashboard/HospitalCapacityDashboard.pbix
+Local URL: http://localhost:8501
 
 
-Open the .pbix file.
+Open that link in your browser.
 
-3.3. What you should see
+📈 3. How to Open the Power BI Dashboard
+Prerequisite
 
-The report contains two pages:
+Power BI Desktop (free)
 
-Capacity vs Demand Overview
+Steps
 
-Weekly view of patient requests, admissions and available beds
+Open Power BI Desktop
 
-KPIs (total bed shortage, spare capacity, average utilisation, satisfaction, refusal)
+Load:
 
-Slicer to filter by service
+PowerBI Dashboard/HospitalCapacityDashboard.pbix
 
-Service & Staff Experience
+What You Will See
 
-Average refusal rate by service
+Page 1 – Capacity vs Demand Overview
 
-Staff morale vs patient satisfaction (bubble size = bed shortage)
+KPIs
 
-Summary table of utilisation, refusal, satisfaction, morale, bed shortage and spare capacity by service
+Weekly trends of patients vs beds
 
-4. Jupyter Notebook (Optional – For Code Review)
+Interactive slicer (Emergency, ICU, etc.)
 
-The notebook is not required to run the dashboards, but shows how the dataset was prepared.
+Page 2 – Service & Staff Experience
 
-File:
-Cloud Project/HospitalBeds/notebooks/hospital_beds_eda.ipynb
+Refusal rate by service
+
+Staff morale vs patient satisfaction bubble chart
+
+Summary table of service performance
+
+🧪 4. Jupyter Notebook (Data Preparation)
+
+If you want to inspect the data pipeline:
+
+HospitalBeds/notebooks/hospital_beds_eda.ipynb
 
 
-Open it in Jupyter Notebook or JupyterLab to see:
+Open it using Jupyter Notebook.
 
-Loading of the raw hospital data from raw_data/
+This notebook includes:
 
-Basic EDA (row counts, missing values, distributions)
+EDA of raw hospital data
 
-Creation of derived metrics:
+Cleaning and standardizing fields
+
+Creating derived metrics:
 
 bed_shortage
 
@@ -201,6 +137,93 @@ utilisation_rate
 
 refusal_rate
 
-Export of the final table service_capacity_staff.csv into exports/
+Export of final dataset (service_capacity_staff.csv)
 
-This notebook, together with the exported CSVs, corresponds to the data warehouse and feature engineering part of the project.
+This parallels what would run in AWS Glue/Spark during production.
+
+☁️ 5. AWS Cloud Workflow (Used During Development)
+
+Although not required to execute the submitted version, the full cloud workflow used was:
+
+Jupyter EDA → S3 → Glue (Spark) → Athena → Power BI + Streamlit → EC2 Deployment
+
+
+Steps included:
+
+Upload raw data to AWS S3
+
+Transform using AWS Glue
+
+Query using AWS Athena
+
+Export processed data to Power BI + Streamlit
+
+Deploy Streamlit app on EC2:
+
+streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+
+
+Public URL used:
+
+http://108.130.199.242:8501/
+
+🧩 6. Features of This Software
+
+Interactive bed-capacity analytics
+
+Service-level filtering (Emergency, ICU, GM, Surgery)
+
+Weekly demand vs beds visualization
+
+KPIs summarizing shortages, refusal rates & utilisation
+
+Experience analytics: satisfaction vs morale
+
+Bubble charts sized by bed shortages
+
+Two full dashboards: Power BI + Streamlit
+
+Cloud-ready architecture using AWS
+
+📘 7. File Directory
+
+This repository/ZIP includes everything required:
+
+✔ Project Report (PDF)
+✔ Source Code
+✔ All datasets
+✔ Dashboards
+✔ README (this file)
+✔ Screenshots
+
+No external dependencies or AWS access is required to run the submitted version.
+
+🧾 8. How to Reproduce the Full Project (Summary)
+
+Run EDA notebook (optional)
+
+Open Power BI dashboard
+
+Run Streamlit web app
+
+These three components demonstrate:
+
+Data warehouse design
+
+Data transformation pipeline
+
+Analytics and dashboarding
+
+Cloud deployment experience
+
+
+🏁 Final Notes
+
+If you run into any installation issues, delete the virtual environment and reinstall:
+
+rm -r .venv
+python -m venv .venv
+pip install -r requirements.txt
+
+
+Your project is now fully reproducible, clearly documented, and ready for academic submission or portfolio use.
