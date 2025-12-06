@@ -113,6 +113,9 @@ jupyter notebook
 
 This project was developed with the following flow (not required to run the local submission):
 Jupyter EDA → S3 → Glue (Spark) → Athena → Power BI + Streamlit → EC2 Deployment
+Architecture diagram (high-level)
+
+![Overall cloud architecture - pipeline from Jupyter to EC2](Screenshots/Overall%20cloud%20architecture%20%E2%80%93%20pipeline%20from%20Jupyter%20to%20EC2.png)
 
 If deploying to EC2:
 - Open TCP 8501 in EC2 Security Group
