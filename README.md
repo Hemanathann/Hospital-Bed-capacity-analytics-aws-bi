@@ -150,3 +150,6 @@ If deploying to EC2:
 - [ ] Power BI Desktop opens the PBIX file and shows visuals
 
 ---
+Live demo (your Streamlit app)
+- Simple link:
+  [Open the live Streamlit app (HTTP)](http://108.130.199.242:8501/)
