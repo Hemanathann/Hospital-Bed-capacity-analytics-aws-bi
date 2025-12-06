@@ -141,7 +141,7 @@ If deploying to EC2:
 
 ---
 
-## 6. Reproducibility checklist (for your professor)
+## 6. Reproducibility checklist
 
 - [ ] Python 3.10 installed
 - [ ] Create and activate venv inside streamlit_app
