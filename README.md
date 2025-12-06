@@ -86,14 +86,7 @@ $env:DATA_PATH="C:\path\to\service_capacity_staff.csv"; streamlit run app.py
 
 What you will see:
 - Page 1 – Capacity vs Demand Overview (KPIs, weekly trends, service slicer)
-Power BI — Capacity vs Demand overview (summary)
-
-![Power BI - Capacity vs Demand overview](Screenshots/bi_overview.png)
-
 - Page 2 – Service & Staff Experience (refusal rates, morale vs satisfaction bubble chart)
-Power BI — Service & Staff Experience
-
-![Power BI - Service & Staff Experience page](Screenshots/Power%20BI%20-%20Service%20%26%20Staff%20Experience%20page.png)
 Note: The PBIX includes the visuals only — if it expects a direct dataset connection, the file in the repo is the same exported dataset used in the report. 
 
 ---
