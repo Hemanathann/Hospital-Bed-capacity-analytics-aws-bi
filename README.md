@@ -87,8 +87,7 @@ $env:DATA_PATH="C:\path\to\service_capacity_staff.csv"; streamlit run app.py
 What you will see:
 - Page 1 – Capacity vs Demand Overview (KPIs, weekly trends, service slicer)
 Power BI — Capacity vs Demand overview (summary)
-
-![Power BI - Capacity vs Demand overview (All services)](Screenshots/Power%20BI%20-%20Capacity%20vs%20Demand%20overview%20(All%20services).png)
+![Power BI - Capacity vs Demand overview (All services)](Screenshots/Power%20BI%20-%20Capacity%20vs%20Demand%20overview%20%28All%20services%29.png)
 
 
 - Page 2 – Service & Staff Experience (refusal rates, morale vs satisfaction bubble chart)
