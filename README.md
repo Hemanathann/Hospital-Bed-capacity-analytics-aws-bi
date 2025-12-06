@@ -87,6 +87,7 @@ $env:DATA_PATH="C:\path\to\service_capacity_staff.csv"; streamlit run app.py
 What you will see:
 - Page 1 – Capacity vs Demand Overview (KPIs, weekly trends, service slicer)
 - Page 2 – Service & Staff Experience (refusal rates, morale vs satisfaction bubble chart)
+
 Note: The PBIX includes the visuals only — if it expects a direct dataset connection, the file in the repo is the same exported dataset used in the report. 
 
 ---
@@ -154,4 +155,3 @@ Streamlit app — Capacity vs Demand (live UI)
 
 - Simple link:
   [Open the live Streamlit app (HTTP)](http://108.130.199.242:8501/)
-![Streamlit app - Capacity vs Demand tab](Screenshots/Streamlit%20app%20-%20Capacity%20vs%20Demand%20tab.png)Live demo (your Streamlit app)
