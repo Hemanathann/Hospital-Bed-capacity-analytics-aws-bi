@@ -120,7 +120,6 @@ Architecture diagram (high-level)
 If deploying to EC2:
 - Open TCP 8501 in EC2 Security Group
 - Consider running Streamlit behind nginx or using a reverse proxy if exposing to internet
-- Optionally use systemd / docker for production reliability (I can add a Dockerfile if needed)
 
 ---
 
